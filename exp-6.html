@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exp-6</title>
+    <style>
+        div{
+            background-color: black;
+            width: 200px;
+            height: auto;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+
+        }
+        body{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            background-color: aqua;
+            padding-top: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+<h1>Experiment-6</h1>
+        <input class="inut" type="text">
+        <p id="p1">input</p>
+        <button onclick="button()">click me</button>
+        <p id="p2">button</p>
+        <button onclick="voter()">voter info</button>
+        <p id="p3">vote</p>
+            <script>
+        
+            let input = document.querySelector('.inut');
+            const p = document.getElementById("p1");
+            const p2 = document.getElementById("p2");
+
+
+            input.addEventListener('input', function() {
+            p.innerHTML=input.value;
+            
+            });
+            function button(){
+                p2.innerHTML=input.value; 
+                console.log(input.value); 
+                input.value=" ";
+            }
+            function voter(){
+                var age=prompt("enter age");
+                const p3=document.getElementById("p3");
+                if (age!=null){
+                if (age>=18){
+                        p3.innerHTML="he/she is eligble for vote";
+                }
+                else{
+                    p3.innerHTML="he/she is not eligble for vote";
+                }
+            }
+            else{
+                p3.innerHTML="Enter the value";
+            }
+
+            }
+            
+        </script>
+
+    </div>
+</body>
+</html>
