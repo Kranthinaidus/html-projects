@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let student = {
+    name: "John",
+    age: 21,
+    course: "BCA"
+};
+
+document.write("<h3>Using for-in loop:</h3>");
+for (let key in student) {
+    document.write(`${key}: ${student[key]}<br>`);
+}
+
+// Convert to array for forEach and for-of
+let entries = Object.entries(student);
+
+document.write("<h3>Using forEach loop:</h3>");
+entries.forEach(([key, value]) => {
+    document.write(`${key}: ${value}<br>`);
+});
+
+document.write("<h3>Using for-of loop:</h3>");
+for (let [key, value] of entries) {
+    document.write(`${key}: ${value}<br>`);
+}
+</script>
+</body>
+</html>

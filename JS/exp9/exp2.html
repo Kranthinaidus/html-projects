@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions and Events</title>
+  <script>
+    function factorial(n) {
+      if (n < 0) return "Factorial not defined for negative numbers.";
+      let fact = 1;
+      for (let i = 1; i <= n; i++) fact *= i;
+      return `Factorial of ${n} = ${fact}`;
+    }
+
+    function fibonacci(n) {
+      if (n <= 0) return "Enter a positive number.";
+      let series = [0, 1];
+      for (let i = 2; i < n; i++) series[i] = series[i - 1] + series[i - 2];
+      return `Fibonacci series up to ${n}: ${series.slice(0, n).join(", ")}`;
+    }
+
+    function primesUpTo(n) {
+      if (n < 2) return "No prime numbers.";
+      let primes = [];
+      for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) { isPrime = false; break; }
+        }
+        if (isPrime) primes.push(i);
+      }
+      return `Prime numbers up to ${n}: ${primes.join(", ")}`;
+    }
+
+    function isPalindrome(num) {
+      let str = num.toString();
+      let reversed = str.split("").reverse().join("");
+      return str === reversed
+        ? `${num} is a Palindrome.`
+        : `${num} is not a Palindrome.`;
+    }
+
+    function calculate(type) {
+      let num = document.getElementById("num").value;
+      let result = "";
+      if (num === "") {
+        alert("Please enter a number!");
+        return;
+      }
+      num = parseInt(num);
+      switch (type) {
+        case "factorial":
+          result = factorial(num);
+          break;
+        case "fibonacci":
+          result = fibonacci(num);
+          break;
+        case "prime":
+          result = primesUpTo(num);
+          break;
+        case "palindrome":
+          result = isPalindrome(num);
+          break;
+      }
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+  <h2>JavaScript Functions and Events</h2>
+  <input type="number" id="num" placeholder="Enter a number" />
+  <br><br>
+  <button onclick="calculate('factorial')">Factorial</button>
+  <button onclick="calculate('fibonacci')">Fibonacci</button>
+  <button onclick="calculate('prime')">Prime</button>
+  <button onclick="calculate('palindrome')">Palindrome</button>
+  <br><br>
+  <h3 id="output" style="color:blue;"></h3>
+</body>
+</html>

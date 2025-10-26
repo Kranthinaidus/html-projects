@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Selectors Example</title>
+  <style>
+
+    h1 {
+      color: darkgreen;
+    }
+
+    #special {
+      color: navy;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background-color: lightpink;
+    }
+
+    h2, p {
+      font-family: Verdana, sans-serif;
+    }
+
+    * {
+      margin: 5px;
+    }
+
+    div p {
+      color: darkorange;
+    }
+
+    div > span {
+      color: darkmagenta;
+      font-weight: bold;
+    }
+
+    h2 + p {
+      color: sienna;
+      font-style: italic;
+    }
+
+    h2 ~ ul {
+      color: darkcyan;
+    }
+
+    a:hover {
+      color: darkred;
+    }
+
+    p:first-child {
+      text-decoration: underline;
+    }
+
+    li:nth-child(2) {
+      background-color: lightblue;
+    }
+
+    p::first-line {
+      font-weight: bold;
+      color: darkblue;
+    }
+
+    p::first-letter {
+      font-size: 24px;
+      color: darkred;
+    }
+
+    input[type="text"] {
+      border: 2px solid darkgreen;
+    }
+
+    input[type="password"] {
+      border: 2px solid darkred;
+    }
+
+    a[target="_blank"] {
+      background-color: lightgoldenrodyellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Selectors Demonstration</h1>
+
+  <h2 id="special">Simple Selectors Example</h2>
+  <p class="highlight">This paragraph has a class = "highlight".</p>
+
+  <div>
+    <p>Paragraph inside a div (descendant selector applied).</p>
+    <span>Span child of div (child selector applied).</span>
+  </div>
+
+  <h2>Combinator Selectors Example</h2>
+  <p>This paragraph is adjacent to h2 (adjacent sibling).</p>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2 (nth-child selector applied)</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Links Example</h2>
+  <p>Visit <a href="https://www.google.com" target="_blank">Google</a></p>
+  <p>Visit <a href="https://www.wikipedia.org">Wikipedia</a></p>
+
+  <h2>Form Example</h2>
+  <form>
+    Username: <input type="text"><br>
+    Password: <input type="password"><br>
+  </form>
+
+</body>
+</html>

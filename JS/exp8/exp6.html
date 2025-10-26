@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let amount = parseInt(prompt("Enter the deposited amount:"));
+let remaining = amount;
+let notes = [100, 50, 20, 10, 5, 2, 1];
+
+document.write(`<h3>Denominations for Rs.${amount}</h3>`);
+
+for (let note of notes) {
+    let count = Math.floor(remaining / note);
+    if (count > 0) {
+        document.write(`${count} - ${note}'s<br>`);
+        remaining %= note;
+    }
+}
+</script>
+</body>
+</html>
